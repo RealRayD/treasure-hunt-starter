@@ -3,6 +3,7 @@ export interface Product {
   name: string;
   brand: string;
   category: string;
+  subcategory: string;
   originalPrice: number;
   salePrice: number;
   discount: number;
@@ -11,6 +12,7 @@ export interface Product {
   colors: string[];
   isNew?: boolean;
   isBestSeller?: boolean;
+  isClearance?: boolean;
 }
 
 export interface CartItem extends Product {
