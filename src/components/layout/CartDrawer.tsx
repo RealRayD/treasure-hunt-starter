@@ -31,7 +31,7 @@ const CartDrawer = () => {
         <div className="flex items-center justify-between p-4 border-b">
           <div className="flex items-center gap-2">
             <ShoppingBag className="h-5 w-5" />
-            <h2 className="font-bold text-lg">Your Bag ({totalItems})</h2>
+            <h2 className="font-bold text-lg">Jūsu Grozs ({totalItems})</h2>
           </div>
           <button
             onClick={closeCart}
@@ -46,11 +46,11 @@ const CartDrawer = () => {
           {items.length === 0 ? (
             <div className="text-center py-12">
               <ShoppingBag className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
-              <p className="text-lg font-medium mb-2">Your bag is empty</p>
+              <p className="text-lg font-medium mb-2">Jūsu grozs ir tukšs</p>
               <p className="text-muted-foreground mb-6">
-                Start shopping to fill it up!
+                Sāciet iepirkties, lai to piepildītu!
               </p>
-              <Button onClick={closeCart}>Continue Shopping</Button>
+              <Button onClick={closeCart}>Turpināt Iepirkšanos</Button>
             </div>
           ) : (
             <ul className="space-y-4">
@@ -70,14 +70,14 @@ const CartDrawer = () => {
                     </p>
                     <h3 className="font-medium truncate">{item.name}</h3>
                     <p className="text-sm text-muted-foreground">
-                      Size: {item.selectedSize} | {item.selectedColor}
+                      Izmērs: {item.selectedSize} | {item.selectedColor}
                     </p>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="price-original">
-                        £{item.originalPrice.toFixed(2)}
+                        €{item.originalPrice.toFixed(2)}
                       </span>
                       <span className="price-sale">
-                        £{item.salePrice.toFixed(2)}
+                        €{item.salePrice.toFixed(2)}
                       </span>
                     </div>
                     <div className="flex items-center justify-between mt-3">
@@ -137,21 +137,21 @@ const CartDrawer = () => {
           <div className="border-t p-4 space-y-4">
             {totalSavings > 0 && (
               <div className="bg-success/10 text-success px-4 py-2 rounded-md text-sm font-medium text-center">
-                🎉 You're saving £{totalSavings.toFixed(2)}!
+                🎉 Jūs ietaupāt €{totalSavings.toFixed(2)}!
               </div>
             )}
             <div className="flex justify-between text-lg font-bold">
-              <span>Subtotal</span>
-              <span>£{totalPrice.toFixed(2)}</span>
+              <span>Starpsumma</span>
+              <span>€{totalPrice.toFixed(2)}</span>
             </div>
             <p className="text-sm text-muted-foreground text-center">
-              Shipping calculated at checkout
+              Piegādes izmaksas tiek aprēķinātas pie apmaksas
             </p>
             <Button variant="sale" size="xl" className="w-full">
-              Checkout
+              Noformēt Pasūtījumu
             </Button>
             <Button variant="outline" className="w-full" onClick={closeCart}>
-              Continue Shopping
+              Turpināt Iepirkšanos
             </Button>
           </div>
         )}

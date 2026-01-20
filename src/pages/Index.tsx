@@ -17,10 +17,10 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>TreasureHunt | Designer Brands at Amazing Prices</title>
+        <title>DressCod | Dizaineru Zīmoli par Izdevīgām Cenām</title>
         <meta
           name="description"
-          content="Discover designer brands at up to 60% off RRP. Shop women's, men's, kids' fashion, home decor and more. New arrivals daily!"
+          content="Atklājiet dizaineru zīmolus ar atlaidi līdz 60%. Iepērcieties sieviešu, vīriešu, bērnu apģērbā un mājās. Jaunas preces katru dienu!"
         />
       </Helmet>
 
@@ -34,19 +34,19 @@ const Index = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div className="flex flex-col items-center gap-2">
                 <Truck className="h-6 w-6 text-sale" />
-                <p className="text-sm font-medium">Free Delivery Over £50</p>
+                <p className="text-sm font-medium">Bezmaksas piegāde virs €50</p>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <RotateCcw className="h-6 w-6 text-sale" />
-                <p className="text-sm font-medium">30-Day Returns</p>
+                <p className="text-sm font-medium">30 dienu atgriešana</p>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <Shield className="h-6 w-6 text-sale" />
-                <p className="text-sm font-medium">Secure Checkout</p>
+                <p className="text-sm font-medium">Droša apmaksa</p>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <Percent className="h-6 w-6 text-sale" />
-                <p className="text-sm font-medium">Up to 60% Off RRP</p>
+                <p className="text-sm font-medium">Līdz 60% atlaide</p>
               </div>
             </div>
           </div>
@@ -60,29 +60,29 @@ const Index = () => {
 
         {/* New Arrivals */}
         {newArrivals.length > 0 && (
-          <ProductGrid products={newArrivals} title="Just Landed ✨" />
+          <ProductGrid products={newArrivals} title="Tikko Ienākušie ✨" />
         )}
 
         {/* Featured Products */}
-        <ProductGrid products={featuredProducts} title="Top Picks For You" />
+        <ProductGrid products={featuredProducts} title="Mūsu Izvēle" />
 
         {/* Best Sellers */}
         {bestSellers.length > 0 && (
-          <ProductGrid products={bestSellers} title="Best Sellers 🔥" />
+          <ProductGrid products={bestSellers} title="Visvairāk Pārdotie 🔥" />
         )}
 
         {/* Shop All CTA */}
         <section className="py-12 bg-muted/50">
           <div className="container text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to Discover More?
+              Gatavs Atklāt Vairāk?
             </h2>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              Explore thousands of designer items at amazing prices. New treasures arrive every day!
+              Izpētiet tūkstošiem dizaineru preču par izdevīgām cenām. Jaunas preces katru dienu!
             </p>
             <Link to="/shop">
               <Button variant="hero" size="xl">
-                Shop All Products
+                Skatīt Visas Preces
               </Button>
             </Link>
           </div>

@@ -36,12 +36,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <div className="absolute top-2 left-2 flex flex-col gap-1">
           {product.isNew && (
             <span className="bg-primary text-primary-foreground px-2 py-0.5 text-xs font-bold">
-              NEW
+              JAUNUMS
             </span>
           )}
           {product.isBestSeller && (
             <span className="bg-success text-success-foreground px-2 py-0.5 text-xs font-bold">
-              BEST SELLER
+              BESTSELLERS
             </span>
           )}
           <span className="sale-badge">-{product.discount}%</span>
@@ -88,9 +88,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
         {/* Pricing */}
         <div className="flex items-center gap-2 mt-2">
           <span className="price-original">
-            RRP £{product.originalPrice.toFixed(2)}
+            MC €{product.originalPrice.toFixed(2)}
           </span>
-          <span className="price-sale">£{product.salePrice.toFixed(2)}</span>
+          <span className="price-sale">€{product.salePrice.toFixed(2)}</span>
         </div>
 
         {/* Quick Size Selector */}
@@ -101,7 +101,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
               : "opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-40"
           }`}
         >
-          <p className="text-xs text-muted-foreground mb-2">Quick Add:</p>
+          <p className="text-xs text-muted-foreground mb-2">Ātrā pievienošana:</p>
           <div className="flex flex-wrap gap-1">
             {product.sizes.slice(0, 5).map((size) => (
               <button
@@ -124,7 +124,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
               className="w-full mt-2"
               onClick={handleAddToCart}
             >
-              Add to Bag
+              Pievienot Grozam
             </Button>
           )}
         </div>

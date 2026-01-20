@@ -17,7 +17,7 @@ export interface FilterState {
   priceRange: [number, number];
 }
 
-const categoryOptions = ["Dresses", "Tops", "Bottoms", "Outerwear", "Shoes", "Accessories"];
+const categoryOptions = ["Kleitas", "Topi", "Bikses", "Virsjakas", "Apavi", "Aksesuāri"];
 const sizeOptions = ["XS", "S", "M", "L", "XL", "XXL"];
 const brandOptions = ["Calvin Klein", "Tommy Hilfiger", "Ralph Lauren", "Michael Kors", "Levi's", "Adidas"];
 
@@ -95,11 +95,11 @@ const FilterSidebar = ({ isOpen, onClose, onFilterChange }: FilterSidebarProps) 
         <div className="h-full overflow-y-auto p-4">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-bold">Filters</h2>
+            <h2 className="text-lg font-bold">Filtri</h2>
             <div className="flex items-center gap-2">
               {hasActiveFilters && (
                 <Button variant="ghost" size="sm" onClick={clearAllFilters}>
-                  Clear All
+                  Notīrīt Visu
                 </Button>
               )}
               <button className="lg:hidden p-2 hover:bg-muted rounded" onClick={onClose}>
@@ -114,7 +114,7 @@ const FilterSidebar = ({ isOpen, onClose, onFilterChange }: FilterSidebarProps) 
               className="flex items-center justify-between w-full font-semibold py-2"
               onClick={() => toggleSection("category")}
             >
-              Category
+              Kategorija
               {expandedSections.category ? (
                 <ChevronUp className="h-4 w-4" />
               ) : (
@@ -145,7 +145,7 @@ const FilterSidebar = ({ isOpen, onClose, onFilterChange }: FilterSidebarProps) 
               className="flex items-center justify-between w-full font-semibold py-2"
               onClick={() => toggleSection("size")}
             >
-              Size
+              Izmērs
               {expandedSections.size ? (
                 <ChevronUp className="h-4 w-4" />
               ) : (
@@ -177,7 +177,7 @@ const FilterSidebar = ({ isOpen, onClose, onFilterChange }: FilterSidebarProps) 
               className="flex items-center justify-between w-full font-semibold py-2"
               onClick={() => toggleSection("brand")}
             >
-              Brand
+              Zīmols
               {expandedSections.brand ? (
                 <ChevronUp className="h-4 w-4" />
               ) : (
@@ -208,7 +208,7 @@ const FilterSidebar = ({ isOpen, onClose, onFilterChange }: FilterSidebarProps) 
               className="flex items-center justify-between w-full font-semibold py-2"
               onClick={() => toggleSection("price")}
             >
-              Price Range
+              Cenu Diapazons
               {expandedSections.price ? (
                 <ChevronUp className="h-4 w-4" />
               ) : (
@@ -226,8 +226,8 @@ const FilterSidebar = ({ isOpen, onClose, onFilterChange }: FilterSidebarProps) 
                   className="mb-4"
                 />
                 <div className="flex justify-between text-sm text-muted-foreground">
-                  <span>£{filters.priceRange[0]}</span>
-                  <span>£{filters.priceRange[1]}</span>
+                  <span>€{filters.priceRange[0]}</span>
+                  <span>€{filters.priceRange[1]}</span>
                 </div>
               </div>
             )}

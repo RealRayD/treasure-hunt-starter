@@ -10,17 +10,17 @@ const Footer = () => {
       <div className="border-b border-background/10">
         <div className="container py-10">
           <div className="max-w-xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-2">Get Exclusive Deals</h3>
+            <h3 className="text-2xl font-bold mb-2">Saņemiet Ekskluzīvus Piedāvājumus</h3>
             <p className="text-background/70 mb-4">
-              Sign up for our newsletter and receive 10% off your first order
+              Piesakieties jaunumiem un saņemiet 10% atlaidi pirmajam pasūtījumam
             </p>
             <div className="flex gap-2">
               <Input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Ievadiet savu e-pastu"
                 className="bg-background/10 border-background/20 text-background placeholder:text-background/50"
               />
-              <Button variant="sale">Subscribe</Button>
+              <Button variant="sale">Abonēt</Button>
             </div>
           </div>
         </div>
@@ -30,38 +30,38 @@ const Footer = () => {
       <div className="container py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <h4 className="font-bold mb-4 text-lg">Shop</h4>
+            <h4 className="font-bold mb-4 text-lg">Veikals</h4>
             <ul className="space-y-2 text-background/70">
-              <li><Link to="/shop/women" className="hover:text-background">Women</Link></li>
-              <li><Link to="/shop/men" className="hover:text-background">Men</Link></li>
-              <li><Link to="/shop/kids" className="hover:text-background">Kids</Link></li>
-              <li><Link to="/shop/home" className="hover:text-background">Home</Link></li>
-              <li><Link to="/shop/clearance" className="hover:text-background text-sale">Clearance</Link></li>
+              <li><Link to="/shop/women" className="hover:text-background">Sievietēm</Link></li>
+              <li><Link to="/shop/men" className="hover:text-background">Vīriešiem</Link></li>
+              <li><Link to="/shop/kids" className="hover:text-background">Bērniem</Link></li>
+              <li><Link to="/shop/home" className="hover:text-background">Mājai</Link></li>
+              <li><Link to="/shop/clearance" className="hover:text-background text-sale">Izpārdošana</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-lg">Customer Service</h4>
+            <h4 className="font-bold mb-4 text-lg">Klientu Serviss</h4>
             <ul className="space-y-2 text-background/70">
-              <li><Link to="/contact" className="hover:text-background">Contact Us</Link></li>
-              <li><Link to="/shipping" className="hover:text-background">Shipping Info</Link></li>
-              <li><Link to="/returns" className="hover:text-background">Returns & Exchanges</Link></li>
-              <li><Link to="/faq" className="hover:text-background">FAQ</Link></li>
-              <li><Link to="/size-guide" className="hover:text-background">Size Guide</Link></li>
+              <li><Link to="/contact" className="hover:text-background">Sazināties ar Mums</Link></li>
+              <li><Link to="/shipping" className="hover:text-background">Piegādes Informācija</Link></li>
+              <li><Link to="/returns" className="hover:text-background">Atgriešana un Apmaiņa</Link></li>
+              <li><Link to="/faq" className="hover:text-background">BUJ</Link></li>
+              <li><Link to="/size-guide" className="hover:text-background">Izmēru Tabula</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-lg">About Us</h4>
+            <h4 className="font-bold mb-4 text-lg">Par Mums</h4>
             <ul className="space-y-2 text-background/70">
-              <li><Link to="/about" className="hover:text-background">Our Story</Link></li>
-              <li><Link to="/careers" className="hover:text-background">Careers</Link></li>
-              <li><Link to="/sustainability" className="hover:text-background">Sustainability</Link></li>
+              <li><Link to="/about" className="hover:text-background">Mūsu Stāsts</Link></li>
+              <li><Link to="/careers" className="hover:text-background">Karjera</Link></li>
+              <li><Link to="/sustainability" className="hover:text-background">Ilgtspējība</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-lg">Connect With Us</h4>
+            <h4 className="font-bold mb-4 text-lg">Sekojiet Mums</h4>
             <div className="flex gap-4 mb-6">
               <a href="#" className="text-background/70 hover:text-background">
                 <Facebook className="h-5 w-5" />
@@ -78,7 +78,7 @@ const Footer = () => {
             </div>
             <p className="text-background/70 text-sm">
               <Mail className="h-4 w-4 inline mr-2" />
-              help@treasurehunt.com
+              info@dresscod.lv
             </p>
           </div>
         </div>
@@ -87,11 +87,11 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-background/10">
         <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-background/60">
-          <p>© 2024 TreasureHunt. All rights reserved.</p>
+          <p>© 2024 DressCod. Visas tiesības aizsargātas.</p>
           <div className="flex gap-6">
-            <Link to="/privacy" className="hover:text-background">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-background">Terms of Service</Link>
-            <Link to="/accessibility" className="hover:text-background">Accessibility</Link>
+            <Link to="/privacy" className="hover:text-background">Privātuma Politika</Link>
+            <Link to="/terms" className="hover:text-background">Lietošanas Noteikumi</Link>
+            <Link to="/accessibility" className="hover:text-background">Pieejamība</Link>
           </div>
         </div>
       </div>

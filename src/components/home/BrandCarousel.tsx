@@ -19,7 +19,7 @@ const BrandCarousel = () => {
     <section className="py-12 md:py-16 bg-muted/50">
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
-          Featured Brands
+          Populārākie Zīmoli
         </h2>
 
         <div className="relative">
@@ -27,14 +27,14 @@ const BrandCarousel = () => {
           <button
             onClick={() => scroll("left")}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-background shadow-lg rounded-full hover:bg-muted transition-colors hidden md:block"
-            aria-label="Scroll left"
+            aria-label="Ritināt pa kreisi"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             onClick={() => scroll("right")}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-background shadow-lg rounded-full hover:bg-muted transition-colors hidden md:block"
-            aria-label="Scroll right"
+            aria-label="Ritināt pa labi"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
