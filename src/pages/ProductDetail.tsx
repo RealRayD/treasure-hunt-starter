@@ -23,9 +23,9 @@ const ProductDetail = () => {
     return (
       <Layout>
         <div className="container py-12 text-center">
-          <h1 className="text-2xl font-bold mb-4">Product Not Found</h1>
+          <h1 className="text-2xl font-bold mb-4">Produkts Nav Atrasts</h1>
           <Link to="/shop">
-            <Button>Continue Shopping</Button>
+            <Button>Turpināt Iepirkšanos</Button>
           </Link>
         </div>
       </Layout>
@@ -50,10 +50,10 @@ const ProductDetail = () => {
   return (
     <>
       <Helmet>
-        <title>{`${product.name} by ${product.brand} | TreasureHunt`}</title>
+        <title>{`${product.name} | ${product.brand} | DressCod`}</title>
         <meta
           name="description"
-          content={`Shop ${product.name} by ${product.brand}. Save ${product.discount}% off RRP. Now only £${product.salePrice.toFixed(2)}.`}
+          content={`Iegādājieties ${product.name} no ${product.brand}. Ietaupiet ${product.discount}% no MC. Tagad tikai €${product.salePrice.toFixed(2)}.`}
         />
       </Helmet>
 
@@ -61,9 +61,9 @@ const ProductDetail = () => {
         <div className="container py-6">
           {/* Breadcrumb */}
           <nav className="text-sm text-muted-foreground mb-6 flex items-center gap-2">
-            <Link to="/" className="hover:text-foreground">Home</Link>
+            <Link to="/" className="hover:text-foreground">Sākums</Link>
             <span>/</span>
-            <Link to="/shop" className="hover:text-foreground">Shop</Link>
+            <Link to="/shop" className="hover:text-foreground">Veikals</Link>
             <span>/</span>
             <Link
               to={`/shop/${product.category.toLowerCase()}`}
@@ -81,7 +81,7 @@ const ProductDetail = () => {
             className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-6"
           >
             <ChevronLeft className="h-4 w-4" />
-            Back to Shop
+            Atpakaļ uz Veikalu
           </Link>
 
           {/* Product Layout */}
@@ -98,7 +98,7 @@ const ProductDetail = () => {
                 <div className="absolute top-4 left-4 flex flex-col gap-2">
                   {product.isNew && (
                     <span className="bg-primary text-primary-foreground px-3 py-1 text-sm font-bold">
-                      NEW
+                      JAUNUMS
                     </span>
                   )}
                   <span className="sale-badge text-sm">-{product.discount}%</span>
@@ -117,7 +117,7 @@ const ProductDetail = () => {
                   >
                     <img
                       src={img}
-                      alt={`${product.name} view ${index + 1}`}
+                      alt={`${product.name} skats ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
                   </button>
@@ -137,20 +137,20 @@ const ProductDetail = () => {
               {/* Pricing */}
               <div className="flex items-baseline gap-3">
                 <span className="text-3xl font-bold text-sale">
-                  £{product.salePrice.toFixed(2)}
+                  €{product.salePrice.toFixed(2)}
                 </span>
                 <span className="text-xl text-muted-foreground line-through">
-                  RRP £{product.originalPrice.toFixed(2)}
+                  MC €{product.originalPrice.toFixed(2)}
                 </span>
-                <span className="sale-badge ml-2">Save {product.discount}%</span>
+                <span className="sale-badge ml-2">Ietaupiet {product.discount}%</span>
               </div>
 
               {/* Color Selection */}
               <div>
                 <p className="font-semibold mb-3">
-                  Colour:{" "}
+                  Krāsa:{" "}
                   <span className="font-normal text-muted-foreground">
-                    {selectedColor || "Select a colour"}
+                    {selectedColor || "Izvēlieties krāsu"}
                   </span>
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -174,13 +174,13 @@ const ProductDetail = () => {
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <p className="font-semibold">
-                    Size:{" "}
+                    Izmērs:{" "}
                     <span className="font-normal text-muted-foreground">
-                      {selectedSize || "Select a size"}
+                      {selectedSize || "Izvēlieties izmēru"}
                     </span>
                   </p>
                   <button className="text-sm text-muted-foreground hover:text-foreground underline">
-                    Size Guide
+                    Izmēru Tabula
                   </button>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -202,7 +202,7 @@ const ProductDetail = () => {
 
               {/* Quantity */}
               <div>
-                <p className="font-semibold mb-3">Quantity</p>
+                <p className="font-semibold mb-3">Daudzums</p>
                 <div className="flex items-center gap-4">
                   <div className="flex items-center border rounded-md">
                     <button
@@ -231,7 +231,7 @@ const ProductDetail = () => {
                   onClick={handleAddToCart}
                   disabled={!selectedSize || !selectedColor}
                 >
-                  Add to Bag
+                  Pievienot Grozam
                 </Button>
                 <Button
                   variant="outline"
@@ -249,7 +249,7 @@ const ProductDetail = () => {
 
               {(!selectedSize || !selectedColor) && (
                 <p className="text-sm text-muted-foreground">
-                  Please select a size and colour to add to bag
+                  Lūdzu, izvēlieties izmēru un krāsu, lai pievienotu grozam
                 </p>
               )}
 
@@ -258,27 +258,27 @@ const ProductDetail = () => {
                 <div className="flex items-start gap-3">
                   <Truck className="h-5 w-5 text-muted-foreground mt-0.5" />
                   <div>
-                    <p className="font-medium">Free Delivery Over £50</p>
+                    <p className="font-medium">Bezmaksas Piegāde virs €50</p>
                     <p className="text-sm text-muted-foreground">
-                      Estimated delivery: 3-5 business days
+                      Paredzamais piegādes laiks: 3-5 darba dienas
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <RotateCcw className="h-5 w-5 text-muted-foreground mt-0.5" />
                   <div>
-                    <p className="font-medium">Free 30-Day Returns</p>
+                    <p className="font-medium">Bezmaksas 30 Dienu Atgriešana</p>
                     <p className="text-sm text-muted-foreground">
-                      Easy returns with free collection
+                      Vienkārša atgriešana ar bezmaksas savākšanu
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Shield className="h-5 w-5 text-muted-foreground mt-0.5" />
                   <div>
-                    <p className="font-medium">Secure Checkout</p>
+                    <p className="font-medium">Droša Apmaksa</p>
                     <p className="text-sm text-muted-foreground">
-                      100% secure payment processing
+                      100% droša maksājumu apstrāde
                     </p>
                   </div>
                 </div>
@@ -289,7 +289,7 @@ const ProductDetail = () => {
           {/* Related Products */}
           {relatedProducts.length > 0 && (
             <section className="mt-16">
-              <ProductGrid products={relatedProducts} title="Style It With" />
+              <ProductGrid products={relatedProducts} title="Papildini Savu Stilu" />
             </section>
           )}
         </div>

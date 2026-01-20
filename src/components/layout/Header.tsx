@@ -12,7 +12,13 @@ const Header = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const { openCart, totalItems } = useCart();
 
-  const mainNavItems = ["Women", "Men", "Kids", "Home", "Clearance"];
+  const mainNavItems = [
+    { name: "Sievietēm", slug: "women" },
+    { name: "Vīriešiem", slug: "men" },
+    { name: "Bērniem", slug: "kids" },
+    { name: "Mājai", slug: "home" },
+    { name: "Izpārdošana", slug: "clearance" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 bg-background border-b">
@@ -25,7 +31,7 @@ const Header = () => {
               className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
             >
               <MapPin className="h-4 w-4" />
-              <span className="hidden sm:inline">Store Finder</span>
+              <span className="hidden sm:inline">Atrast veikalu</span>
             </Link>
           </div>
           <div className="flex items-center gap-4">
@@ -34,7 +40,7 @@ const Header = () => {
               className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
             >
               <User className="h-4 w-4" />
-              <span className="hidden sm:inline">My Account</span>
+              <span className="hidden sm:inline">Mans konts</span>
             </Link>
           </div>
         </div>
@@ -54,7 +60,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <h1 className="text-2xl lg:text-3xl font-black tracking-tight">
-              TREASURE<span className="text-sale">HUNT</span>
+              DRESS<span className="text-sale">COD</span>
             </h1>
           </Link>
 
@@ -64,7 +70,7 @@ const Header = () => {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Search for brands, products..."
+                placeholder="Meklēt zīmolus, produktus..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10 pr-4 h-11 w-full bg-muted/50 border-0 focus:bg-background focus:ring-2 focus:ring-primary"
@@ -94,7 +100,7 @@ const Header = () => {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search..."
+              placeholder="Meklēt..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10 h-10 w-full bg-muted/50 border-0"
@@ -109,35 +115,35 @@ const Header = () => {
           <ul className="flex items-center justify-center gap-0">
             {mainNavItems.map((item) => {
               const category = categories.find(
-                (c) => c.name.toLowerCase() === item.toLowerCase()
+                (c) => c.slug === item.slug
               );
               return (
                 <li
-                  key={item}
+                  key={item.slug}
                   className="relative"
-                  onMouseEnter={() => setActiveCategory(item)}
+                  onMouseEnter={() => setActiveCategory(item.slug)}
                   onMouseLeave={() => setActiveCategory(null)}
                 >
                   <Link
-                    to={`/shop/${item.toLowerCase()}`}
+                    to={`/shop/${item.slug}`}
                     className={`flex items-center gap-1 px-6 py-4 font-semibold text-sm uppercase tracking-wide transition-colors hover:text-sale ${
-                      item === "Clearance" ? "text-sale" : ""
+                      item.slug === "clearance" ? "text-sale" : ""
                     }`}
                   >
-                    {item}
+                    {item.name}
                     {category?.subcategories && (
                       <ChevronDown className="h-4 w-4" />
                     )}
                   </Link>
 
                   {/* Mega Menu Dropdown */}
-                  {activeCategory === item && category?.subcategories && (
+                  {activeCategory === item.slug && category?.subcategories && (
                     <div className="absolute top-full left-0 bg-background border shadow-lg min-w-[200px] animate-slide-down">
                       <ul className="py-2">
                         {category.subcategories.map((sub) => (
                           <li key={sub}>
                             <Link
-                              to={`/shop/${item.toLowerCase()}/${sub.toLowerCase().replace(/ /g, "-")}`}
+                              to={`/shop/${item.slug}/${sub.toLowerCase().replace(/ /g, "-")}`}
                               className="mega-menu-item block"
                             >
                               {sub}
@@ -160,15 +166,15 @@ const Header = () => {
           <nav className="container py-4">
             <ul className="space-y-2">
               {mainNavItems.map((item) => (
-                <li key={item}>
+                <li key={item.slug}>
                   <Link
-                    to={`/shop/${item.toLowerCase()}`}
+                    to={`/shop/${item.slug}`}
                     className={`block py-3 px-4 font-semibold hover:bg-muted rounded-md ${
-                      item === "Clearance" ? "text-sale" : ""
+                      item.slug === "clearance" ? "text-sale" : ""
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}

@@ -85,12 +85,12 @@ const Shop = () => {
     return result;
   }, [category, subcategory, filters, sortBy]);
 
-  const categoryDisplay = category ? getCategoryDisplayName(category) : "All Products";
+  const categoryDisplay = category ? getCategoryDisplayName(category) : "Visas Preces";
   const subcategoryDisplay = subcategory ? getSubcategoryDisplayName(subcategory) : null;
   
   const pageTitle = subcategoryDisplay
-    ? `${categoryDisplay}'s ${subcategoryDisplay} | TreasureHunt`
-    : `${categoryDisplay} | TreasureHunt`;
+    ? `${categoryDisplay} - ${subcategoryDisplay} | DressCod`
+    : `${categoryDisplay} | DressCod`;
 
   return (
     <>
@@ -98,7 +98,7 @@ const Shop = () => {
         <title>{pageTitle}</title>
         <meta
           name="description"
-          content={`Shop ${subcategoryDisplay || categoryDisplay} at amazing prices. Up to 60% off designer brands.`}
+          content={`Iepērcieties ${subcategoryDisplay || categoryDisplay} par izdevīgām cenām. Līdz 60% atlaide dizaineru zīmoliem.`}
         />
       </Helmet>
 
@@ -109,7 +109,7 @@ const Shop = () => {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/">Home</Link>
+                  <Link to="/">Sākums</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
@@ -135,7 +135,7 @@ const Shop = () => {
                 </>
               ) : (
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Shop</BreadcrumbPage>
+                  <BreadcrumbPage>Veikals</BreadcrumbPage>
                 </BreadcrumbItem>
               )}
             </BreadcrumbList>
@@ -145,10 +145,10 @@ const Shop = () => {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
             <div>
               <h1 className="text-2xl md:text-3xl font-bold">
-                {subcategoryDisplay ? `${categoryDisplay}'s ${subcategoryDisplay}` : categoryDisplay}
+                {subcategoryDisplay ? `${categoryDisplay} - ${subcategoryDisplay}` : categoryDisplay}
               </h1>
               <p className="text-muted-foreground">
-                {filteredProducts.length} products found
+                Atrasti {filteredProducts.length} produkti
               </p>
             </div>
 
@@ -159,7 +159,7 @@ const Shop = () => {
                 onClick={() => setIsFilterOpen(true)}
               >
                 <SlidersHorizontal className="h-4 w-4 mr-2" />
-                Filters
+                Filtri
               </Button>
 
               <div className="relative">
@@ -168,11 +168,11 @@ const Shop = () => {
                   onChange={(e) => setSortBy(e.target.value as SortOption)}
                   className="appearance-none bg-background border rounded-md px-4 py-2 pr-10 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary"
                 >
-                  <option value="featured">Featured</option>
-                  <option value="newest">Newest</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="discount">Biggest Discount</option>
+                  <option value="featured">Ieteicamie</option>
+                  <option value="newest">Jaunākās</option>
+                  <option value="price-low">Cena: No Zemākās</option>
+                  <option value="price-high">Cena: No Augstākās</option>
+                  <option value="discount">Lielākā Atlaide</option>
                 </select>
                 <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 pointer-events-none" />
               </div>
@@ -205,9 +205,9 @@ const Shop = () => {
             <div className="flex-1">
               {filteredProducts.length === 0 ? (
                 <div className="text-center py-12">
-                  <p className="text-lg font-medium mb-2">No products found</p>
+                  <p className="text-lg font-medium mb-2">Produkti nav atrasti</p>
                   <p className="text-muted-foreground">
-                    Try adjusting your filters to find what you're looking for.
+                    Mēģiniet pielāgot filtrus, lai atrastu meklēto.
                   </p>
                 </div>
               ) : (

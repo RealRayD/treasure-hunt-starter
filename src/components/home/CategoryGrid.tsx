@@ -6,7 +6,7 @@ const CategoryGrid = () => {
     <section className="py-12 md:py-16">
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
-          Shop by Department
+          Iepērcieties pēc Nodaļas
         </h2>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6">
           {categories.map((category) => (
